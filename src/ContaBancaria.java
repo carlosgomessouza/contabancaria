@@ -1,26 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author ETECIA
- */
 public class ContaBancaria {
-    
-   String NomeDoCliente;
-   int numero;
-   double saldo;
-   
-   public void sacar (){
-       System.out.println("Dinheiro saindo");
-       if(numero<10 ) 
-          
-     }
-   public void depositar (){
-       System.out.println("Dinheiro sainhdo");
-   
-   }
-    
+
+    String NomeDoCliente;
+    int numero;
+    double saldo = 100.0;
+
+    public void sacar(double valor) {
+        
+        if (valor <= this.saldo) {
+            saldo = saldo - valor;
+            System.out.println("Saque realizado com sucesso!");
+        } else {
+            System.out.println("O saque não poderá ser efetuado, saldo insuficiente!");
+        }
+
+    }
+
+    public void depositar(double valor) {
+
+        if (valor > 0) {
+            System.out.println("Depositio de " + valor + " efetuado com sucesso!");
+        } else {
+            System.out.println("Problemas ao efetuar o deposito!");
+        }
+
+    }
+
 }
